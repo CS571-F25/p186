@@ -1,27 +1,32 @@
 import { Row, Col, Form } from "react-bootstrap";
 
-const TYPES = ["All", "Sushi", "Coffee", "Ramen"];
-
 export default function FilterBar({
   selectedType,
   onTypeChange,
   minRating,
   onMinRatingChange,
+  types
 }) {
   return (
     <Row className="g-3">
+      {/* Food Type Dropdown */}
       <Col xs={12} md={6}>
         <Form.Select
           value={selectedType}
           onChange={(e) => onTypeChange(e.target.value)}
         >
-          {TYPES.map((t) => (
+          <option value="All">All food types</option>
+
+          {/* 👇 Dynamic food types */}
+          {types.map((t) => (
             <option key={t} value={t}>
-              {t === "All" ? "All food types" : t}
+              {t}
             </option>
           ))}
         </Form.Select>
       </Col>
+
+      {/* Rating slider */}
       <Col xs={12} md={6}>
         <Form.Range
           min={0}

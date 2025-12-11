@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Row, Col, Form } from "react-bootstrap";
-import { DISHES } from "../data/dishes";
 import DishCard from "./DishCard.jsx";
+import HeroSection from "./HeroSection"; 
 
-export default function Home() {
+export default function Home({ dishes }){
   const [query, setQuery] = useState("");
 
-  const popular = DISHES.filter((d) => d.rating >= 4.5);
+  const popular = dishes.filter((d) => d.rating >= 4.5);
   const filtered = popular.filter((d) =>
     (d.name + d.place + d.type).toLowerCase().includes(query.toLowerCase())
   );

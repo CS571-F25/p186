@@ -3,7 +3,11 @@ import { NavLink } from "react-router-dom";
 
 export default function SiteNavbar() {
   return (
-    <Navbar bg="dark" variant="dark" expand="md">
+    <Navbar
+      expand="md"
+      variant="dark"
+      style={{ backgroundColor: "#c5050c" }}
+    >
       <Container>
         <Navbar.Brand as={NavLink} to="/">
           Madison Bites
