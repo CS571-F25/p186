@@ -6,7 +6,7 @@ export default function RatingStars({ rating }) {
   const stars = [];
   for (let i = 0; i < totalStars; i++) {
     if (i < fullStars) stars.push("★");
-    else if (i === fullStars && hasHalf) stars.push("☆"); // can customize later
+    else if (i === fullStars && hasHalf) stars.push("☆"); 
     else stars.push("☆");
   }
 

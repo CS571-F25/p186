@@ -33,7 +33,6 @@ export default function DishCard({ dish, onDelete, currentUserId }) {
 
       <p className="mt-2">{dish.description}</p>
 
-      {/* Delete only for author */}
       {onDelete && isAuthor && (
         <Button
           variant="outline-danger"

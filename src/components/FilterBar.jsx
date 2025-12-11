@@ -9,15 +9,12 @@ export default function FilterBar({
 }) {
   return (
     <Row className="g-3">
-      {/* Food Type Dropdown */}
       <Col xs={12} md={6}>
         <Form.Select
           value={selectedType}
           onChange={(e) => onTypeChange(e.target.value)}
         >
           <option value="All">All food types</option>
-
-          {/* 👇 Dynamic food types */}
           {types.map((t) => (
             <option key={t} value={t}>
               {t}
@@ -26,7 +23,6 @@ export default function FilterBar({
         </Form.Select>
       </Col>
 
-      {/* Rating slider */}
       <Col xs={12} md={6}>
         <Form.Range
           min={0}

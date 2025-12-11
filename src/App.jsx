@@ -11,7 +11,6 @@ import Footer from "./components/Footer.jsx";
 
 import { DISHES } from "./data/dishes";
 
-/* Create or load a local user ID */
 function getOrCreateUserId() {
   let userId = localStorage.getItem("userId");
   if (!userId) {
@@ -29,7 +28,6 @@ function App() {
     return saved ? JSON.parse(saved) : DISHES;
   });
 
-  /* Persist dishes */
   useEffect(() => {
     localStorage.setItem("dishes", JSON.stringify(dishes));
   }, [dishes]);
@@ -43,7 +41,7 @@ function App() {
       rating: review.rating,
       description: review.comment || "User-submitted review.",
       createdAt: Date.now(),
-      authorId: currentUserId, // 🔒 ownership
+      authorId: currentUserId, 
     };
 
     setDishes((prev) => [newDish, ...prev]);

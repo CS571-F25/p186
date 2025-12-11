@@ -8,7 +8,7 @@ export default function Browse({ dishes, onDelete, currentUserId }) {
   const [minRating, setMinRating] = useState(0);
   const [sortBy, setSortBy] = useState("newest");
 
-  // 🔥 Generate unique food types dynamically
+
   const foodTypes = Array.from(
     new Set(dishes.map((d) => d.type.trim()))
   ).sort();
@@ -35,10 +35,9 @@ export default function Browse({ dishes, onDelete, currentUserId }) {
         onTypeChange={setType}
         minRating={minRating}
         onMinRatingChange={setMinRating}
-        types={foodTypes} // 👈 dynamic list passed in
+        types={foodTypes} 
       />
 
-      {/* Sort dropdown */}
       <Form.Group className="mt-3 mb-3" controlId="sort">
         <Form.Label>Sort by</Form.Label>
         <Form.Select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -60,7 +59,7 @@ export default function Browse({ dishes, onDelete, currentUserId }) {
         ))}
       </Row>
 
-      {/* Empty state */}
+  
       {filteredDishes.length === 0 && (
         <p className="mt-4 text-muted">
           No dishes match your filters. Try adjusting the rating or type filter.

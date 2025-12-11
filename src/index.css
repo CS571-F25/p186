@@ -20,7 +20,6 @@ body {
   background-color: #fffaf3;
 }
 
-/* Links — Badger red instead of Bootstrap blue */
 a {
   color: #c5050c;
   text-decoration: none;
@@ -31,7 +30,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Headings — clear hierarchy */
 h1 {
   font-size: 2.4rem;
   margin-bottom: 0.75rem;
@@ -43,7 +41,6 @@ h2 {
   margin-bottom: 0.75rem;
 }
 
-/* Buttons — override Bootstrap primary */
 .btn-primary {
   background-color: #c5050c;
   border-color: #c5050c;
@@ -54,7 +51,6 @@ h2 {
   border-color: #a0040a;
 }
 
-/* Keep fonts consistent */
 button {
   font-family: inherit;
 }
