@@ -6,7 +6,7 @@ export default function AboutMe() {
           This website was created to help students and locals find the
           best dishes in Madison. Instead of just rating restaurants, Madison
           Bites focuses on specific dishes like the best sushi roll, the best
-          latte, or the best bowl of ramen — so people can get exactly what
+          latte, or the best bowl of ramen so people can get exactly what
           they’re craving.
         </p>
   

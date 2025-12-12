@@ -1,19 +1,22 @@
-export default function RatingStars({ rating }) {
-  const fullStars = Math.floor(rating);
-  const hasHalf = rating - fullStars >= 0.5;
-  const totalStars = 5;
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
+export default function RatingStars({ rating }) {
   const stars = [];
-  for (let i = 0; i < totalStars; i++) {
-    if (i < fullStars) stars.push("★");
-    else if (i === fullStars && hasHalf) stars.push("☆"); 
-    else stars.push("☆");
+  
+  for (let i = 1; i <= 5; i++) {
+    if (rating >= i) {
+      stars.push(<FaStar key={i} color="#FFD700" />);
+    } else if (rating >= i - 0.5) {
+      stars.push(<FaStarHalfAlt key={i} color="#FFD700" />);
+    } else {
+      stars.push(<FaRegStar key={i} color="#FFD700" />);
+    }
   }
 
   return (
-    <span aria-label={`Rating: ${rating} out of 5`} role="img">
-      {stars.join(" ")}{" "}
-      <span style={{ fontSize: "0.9rem" }}>({rating.toFixed(1)})</span>
+    <span style={{ display: "inline-flex", gap: "3px", alignItems: "center" }}>
+      {stars}
+      <span style={{ marginLeft: 6, fontSize: "0.9rem" }}>({rating})</span>
     </span>
   );
 }
